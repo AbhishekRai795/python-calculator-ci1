@@ -30,7 +30,13 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Upload artifact
+      - name: Upload build output
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-pages
+          path: ./_site
+
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./_site
